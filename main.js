@@ -13,8 +13,12 @@ function weatherForecast() {
 
     // get a temperature 10-100 F
     temperature = Math.round(Math.random() * (100 - 10) + 10);
-    console.log(temperature);
+    console.log('Temperature: ' + temperature);
+
     // select a weather condition
+    let rand = Math.round(Math.random() * 4);
+    weather = possibleConditions[rand];
+    console.log('Weather Condition: ' + weather);
     // get a windspeed 0-25 mph
     // return message
 }
