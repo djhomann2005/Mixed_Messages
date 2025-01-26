@@ -1,7 +1,9 @@
 // generateMessage(): main function that runs through the rest of the program
 function messageGenerator() {
     let forecast = weatherForecast();
+    let inspiration = inspirationalMessage();
     console.log(forecast);
+    console.log(inspiration);
 }
 
 // weatherForecast(): generates the weather forecast
@@ -27,3 +29,21 @@ function weatherForecast() {
         ' degrees Fahrenheit and winds at ' + windspeed + ' miles per hour');
 }
 
+// inspirationalMessage(): chooses a message from a list of created messages
+function inspirationalMessage() {
+    const inspirations = [
+        "Be yourself; everyone else is already taken",
+        "You must be te change you wish to see in the world",
+        "You have to believe in yourself when no one else does",
+        "It takes courage to grow up and become who you really are",
+        "Positive thinking will let you do everything better than negative thinking will",
+        "Failure will never overtake me if my determination to succeed is strong enough",
+        "If you don't like the road you're walking, start paving another one",
+        "We must accept finite disappointment, but never lose infinite hope",
+        "Spread love everywhere you go. Let no one ever come to you without leaving happier",
+        "We are not what we know but what we are willing to learn"
+    ];
+
+    let rand = Math.floor(Math.random() * inspirations.length);
+    return inspirations[rand];
+}
