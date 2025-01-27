@@ -7,6 +7,7 @@ function messageGenerator() {
     ];
 
     const container = document.getElementById("message-container");
+    container.innerHTML = "";
     messages.forEach(message => {
         const div = document.createElement("div");
         div.textContent = message.content;
@@ -49,7 +50,7 @@ function weatherForecast() {
 function inspirationalMessage() {
     const inspirations = [
         "Be yourself; everyone else is already taken",
-        "You must be te change you wish to see in the world",
+        "You must be the change you wish to see in the world",
         "You have to believe in yourself when no one else does",
         "It takes courage to grow up and become who you really are",
         "Positive thinking will let you do everything better than negative thinking will",
@@ -71,7 +72,7 @@ function generatePowerball() {
     const powerNumbers = 26;
 
     for (let i = 0; i < numWhiteBalls; i++) {
-        let ball = Math.round(Math.random() * whiteNumbers);
+        let ball = Math.ceil(Math.random() * whiteNumbers);
         while (whiteBalls.includes(ball)) {
             ball = Math.round(Math.random() * whiteNumbers);
         }
