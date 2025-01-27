@@ -1,12 +1,25 @@
 // generateMessage(): main function that runs through the rest of the program
 function messageGenerator() {
-    let forecast = weatherForecast();
-    let inspiration = inspirationalMessage();
-    let lotteryNumber = generatePowerball();
+    const messages = [
+        {id: 'forecast', content: weatherForecast()},
+        {id: 'inspiration', content: inspirationalMessage()},
+        {id: 'lotteryNumber', content: generatePowerball()}
+    ];
+
+    const container = document.getElementById("message-container");
+    messages.forEach(message => {
+        const div = document.createElement("div");
+        div.textContent = message.content;
+        container.appendChild(div);
+    });
+
+    // let forecast = weatherForecast();
+    // let inspiration = inspirationalMessage();
+    // let lotteryNumber = generatePowerball();
     
-    console.log(forecast);
-    console.log(inspiration);    
-    console.log(lotteryNumber);
+    // console.log(forecast);
+    // console.log(inspiration);    
+    // console.log(lotteryNumber);
 }
 
 // weatherForecast(): generates the weather forecast
