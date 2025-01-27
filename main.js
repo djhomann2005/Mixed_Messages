@@ -2,8 +2,11 @@
 function messageGenerator() {
     let forecast = weatherForecast();
     let inspiration = inspirationalMessage();
+    let lotteryNumber = generatePowerball();
+    
     console.log(forecast);
-    console.log(inspiration);
+    console.log(inspiration);    
+    console.log(lotteryNumber);
 }
 
 // weatherForecast(): generates the weather forecast
@@ -46,4 +49,25 @@ function inspirationalMessage() {
 
     let rand = Math.floor(Math.random() * inspirations.length);
     return inspirations[rand];
+}
+
+function generatePowerball() {
+    let whiteBalls = [];
+    const whiteNumbers = 69;
+    const numWhiteBalls = 5;
+    const powerNumbers = 26;
+
+    for (let i = 0; i < numWhiteBalls; i++) {
+        let ball = Math.round(Math.random() * whiteNumbers);
+        while (whiteBalls.includes(ball)) {
+            ball = Math.round(Math.random() * whiteNumbers);
+        }
+        whiteBalls.push(ball);
+    }
+
+    whiteBalls.sort((a, b) => a - b);
+    
+    let powerBall = Math.round(Math.random() * powerNumbers);
+    
+    return ("Powerball Numbers: " + whiteBalls + " PB: " + powerBall);
 }
